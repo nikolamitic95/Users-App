@@ -4,7 +4,7 @@ import { UserObj } from '../entities/userObj';
 class UserService {
     getUsers() {
         return baseAPI.get(`users`)
-            .then(response => response.data )
+            .then(response => response.data)
             .then(users => {
                 let newUsers = users.map(user => new UserObj(user))
                 return newUsers;
@@ -14,9 +14,14 @@ class UserService {
 
     getSingleUser(id) {
         return baseAPI.get(`users/${id}`)
-            .then(response => console.log( response))
+            .then(response => response.data)
             .then(singleUser => new UserObj(singleUser))
             .catch(error => console.log(error))
+    }
+
+    deleteUser(id) {
+        return baseAPI.delete(`users/${id}`)
+            .then(response => response.status)
     }
 }
 
