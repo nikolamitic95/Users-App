@@ -5,6 +5,7 @@ import { Header } from "./components/Header/Header";
 import { UsersPage } from './containers/UsersPage/UsersPage';
 import { SingleUserPage } from './containers/SingleUserPage/SingleUserPage';
 import { CreateNewUser } from './containers/CreateNewUser/CreateNewUser';
+import { EditUser } from './containers/EditUser/EditUser';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/users" component={UsersPage} />
         <Route exact path="/users/:id" component={SingleUserPage} />
         <Route exact path="/createuser/" component={CreateNewUser} />
+        <Route exact path="/users/:id/edit" component={EditUser} />
       </Switch>
     </ChakraProvider>
   );

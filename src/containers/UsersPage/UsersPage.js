@@ -23,7 +23,9 @@ const UsersPage = () => {
 
     return (
         <Container maxW="container.lg">
-            <Table variant="simple" marginTop="15px">
+            <Table
+                variant="simple"
+                marginTop="20px">
                 <Thead>
                     <Tr>
                         <Th>ID</Th>

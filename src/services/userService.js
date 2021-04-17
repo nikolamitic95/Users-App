@@ -22,6 +22,13 @@ class UserService {
     deleteUser(id) {
         return baseAPI.delete(`users/${id}`)
             .then(response => response.status)
+            .catch(error => console.log(error))
+    }
+
+    postUser(user) {
+        return baseAPI.post(`users`, user)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
     }
 }
 
