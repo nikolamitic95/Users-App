@@ -6,22 +6,27 @@ import { Button } from "@chakra-ui/button";
 import { Container, Center } from "@chakra-ui/layout";
 import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
 import { userService } from "../../services/userService";
+import { Loader } from "../../components/Spinner/Spinner";
 
 const UsersPage = () => {
 
     const [users, setUsers] = useState([]);
     const history = useHistory();
+    const [loader, setLoader] = useState(true);
 
     const allUsers = async () => {
         const fetchUsers = await userService.getUsers();
-        setUsers(fetchUsers)
+        setUsers(fetchUsers);
+        setLoader(false);
     };
 
     useEffect(() => {
         allUsers();
     }, []);
 
-    return (
+    return loader ? (
+        <Loader />
+    ) : (
         <Container maxW="container.lg">
             <Table
                 variant="simple"

@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { LoginPage } from './containers/LoginPage/LoginPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
 import { Redirect, Route, Switch } from "react-router";
 import { Header } from "./components/Header/Header";
-import { UsersPage } from './containers/UsersPage/UsersPage';
-import { SingleUserPage } from './containers/SingleUserPage/SingleUserPage';
-import { CreateNewUser } from './containers/CreateNewUser/CreateNewUser';
-import { EditUser } from './containers/EditUser/EditUser';
+import { UsersPage } from './pages/UsersPage/UsersPage';
+import { SingleUserPage } from './pages/SingleUserPage/SingleUserPage';
+import { CreateNewUser } from './pages/CreateNewUser/CreateNewUser';
+import { EditUser } from './pages/EditUser/EditUser';
 
 function App() {
   return (

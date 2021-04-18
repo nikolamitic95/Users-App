@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Button, Container, Text, Center } from "@chakra-ui/react";
-import { InputEl } from "../../components/InputEl/InputEl";
+import { InputEl } from "../../components/Input/InputEl";
 import { useHistory } from "react-router-dom";
 import { loginValidation } from '../../shared/utilities';
 

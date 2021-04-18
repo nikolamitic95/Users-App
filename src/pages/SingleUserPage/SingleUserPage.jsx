@@ -6,20 +6,23 @@ import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
 import { useHistory, useParams } from "react-router";
 import { User } from "../../components/User/User";
 import { userService } from "../../services/userService";
+import { Loader } from "../../components/Spinner/Spinner";
 
 const SingleUserPage = () => {
 
   const [user, setUser] = useState();
   const history = useHistory();
   let { id } = useParams();
+  const [loader, setLoader] = useState(true);
 
   const getUser = async (id) => {
     const fetchSingleUser = await userService.getSingleUser(id);
     setUser(fetchSingleUser);
+    setLoader(false);
   };
 
-  const deleteUser = async (id) => {
-    const status = await userService.deleteUser(id);
+  const deleteUser = async () => {
+    const status = await userService.deleteUser(id, user);
     if (status === 200) {
       alert("The user has been deleted")
       history.push('/users')
@@ -32,7 +35,9 @@ const SingleUserPage = () => {
     getUser(id);
   }, [id]);
 
-  return user ? (
+  return loader ? (
+    <Loader />
+  ) : (
     <Container maxW="container.xl">
       <Table
         variant="simple"
@@ -61,8 +66,8 @@ const SingleUserPage = () => {
           marginTop="20px"
           marginRight="10px"
           onClick={() => history.push(`/users/${id}/edit`)}
-            >
-            Edit User
+        >
+          Edit User
         </Button>
         <Button
           bg="#00417A"
@@ -75,9 +80,7 @@ const SingleUserPage = () => {
         </Button>
       </Center>
     </Container>
-
   )
-    : null
 }
 
 export { SingleUserPage }

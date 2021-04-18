@@ -19,15 +19,20 @@ class UserService {
             .catch(error => console.log(error))
     }
 
-    deleteUser(id) {
-        return baseAPI.delete(`users/${id}`)
+    deleteUser(id, user) {
+        return baseAPI.delete(`users/${id}`, user)
             .then(response => response.status)
             .catch(error => console.log(error))
     }
 
     postUser(user) {
         return baseAPI.post(`users`, user)
-            .then(response => console.log(response))
+            .then(response => response.status)
+            .catch(error => console.log(error))
+    }
+    editUser(user, id) {
+        return baseAPI.patch(`users/${id}`, user)
+            .then(response => response.status)
             .catch(error => console.log(error))
     }
 }
