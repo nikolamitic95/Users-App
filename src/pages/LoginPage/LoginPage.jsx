@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Button, Container, Text, Center } from "@chakra-ui/react";
-import { InputEl } from "../../components/Input/InputEl";
+import { InputEl } from "../../components/Input/Input";
 import { useHistory } from "react-router-dom";
 import { loginValidation } from '../../shared/utilities';
 
@@ -33,7 +33,7 @@ const LoginPage = () => {
             borderRadius="15px"
         >
             <Center>
-                <Text fontSize="4xl" marginTop="10px">LOGIN</Text>
+                <Text fontSize="4xl" marginTop="10px" fontWeight="700">LOGIN</Text>
             </Center>
             <Center>
                 <Text fontSize="1xl" color="red" marginTop="10px">{message}</Text>
@@ -60,4 +60,4 @@ const LoginPage = () => {
     );
 };
 
-export { LoginPage };
+export default LoginPage;

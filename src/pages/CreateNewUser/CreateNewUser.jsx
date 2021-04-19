@@ -4,6 +4,7 @@ import { userService } from '../../services/userService';
 import { useHistory } from "react-router";
 import { validateEmail } from '../../shared/utilities';
 import { FormEl } from "../../components/Form/FormEl";
+import { authentication } from "../../hoc/authentication";
 
 const CreateNewUser = () => {
     const [user, setUser] = useState({});
@@ -17,13 +18,12 @@ const CreateNewUser = () => {
     };
 
     const createUser = async () => {
-
         const status = await userService.postUser(user);
         const validEmail = validateEmail(user.email)
         if (!validEmail || !user.name) {
-            setMessage("Enter a valid name and email")
+            setMessage("Please enter a valid name and email!")
         } else if (status === 201) {
-            alert("User created")
+            alert("The user has been successfully created!")
             history.push('/users')
         }
     }
@@ -39,4 +39,4 @@ const CreateNewUser = () => {
     )
 }
 
-export { CreateNewUser }
+export default authentication(CreateNewUser)

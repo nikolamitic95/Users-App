@@ -4,6 +4,7 @@ import { userService } from '../../services/userService';
 import { useHistory, useParams } from "react-router";
 import { validateEmail } from "../../shared/utilities";
 import { FormEl } from "../../components/Form/FormEl";
+import { authentication } from "../../hoc/authentication";
 
 const EditUser = () => {
 
@@ -26,9 +27,9 @@ const EditUser = () => {
         const status = await userService.editUser(user, id);
         const validEmail = validateEmail(user.email)
         if (!validEmail || !user.name) {
-            setMessage("Enter a valid name and email")
+            setMessage("Please enter a valid name and email!")
         } else if (status === 200) {
-            alert("User edited")
+            alert("The user has been successfully updated!")
             history.push('/users')
         }
     }
@@ -51,4 +52,4 @@ const EditUser = () => {
     )
 }
 
-export { EditUser }
+export default authentication(EditUser);

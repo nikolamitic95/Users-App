@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import { InputEl } from "../Input/InputEl";
+import { InputEl } from "../Input/Input";
 import { Container, Center, Text, Button } from '@chakra-ui/react';
 
 const FormEl = ({ title, message, name, email, setValues, submit, buttonTitle }) => {
@@ -14,10 +14,10 @@ const FormEl = ({ title, message, name, email, setValues, submit, buttonTitle })
             borderRadius="15px"
         >
             <Center>
-                <Text fontSize="4xl" marginTop="10px">{title}</Text>
+                <Text fontSize="4xl" marginTop="10px" fontWeight="700">{title}</Text>
             </Center>
             <Center>
-                <Text fontSize="1xl" marginTop="10px" color="red">{message}</Text>
+                <Text fontSize="1xl" marginTop="10px" color="red" fontWeight="600">{message}</Text>
             </Center>
             <InputEl
                 type="text"

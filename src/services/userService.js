@@ -30,6 +30,7 @@ class UserService {
             .then(response => response.status)
             .catch(error => console.log(error))
     }
+    Ф
     editUser(user, id) {
         return baseAPI.patch(`users/${id}`, user)
             .then(response => response.status)

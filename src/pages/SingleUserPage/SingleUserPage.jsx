@@ -7,6 +7,7 @@ import { useHistory, useParams } from "react-router";
 import { User } from "../../components/User/User";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
+import { authentication } from "../../hoc/authentication";
 
 const SingleUserPage = () => {
 
@@ -24,7 +25,7 @@ const SingleUserPage = () => {
   const deleteUser = async () => {
     const status = await userService.deleteUser(id, user);
     if (status === 200) {
-      alert("The user has been deleted")
+      alert("The user has been deleted!")
       history.push('/users')
     } else {
       alert("Currently unable to delete user")
@@ -44,14 +45,14 @@ const SingleUserPage = () => {
         marginTop="20px">
         <Thead>
           <Tr>
-            <Th>ID</Th>
-            <Th>Name</Th>
-            <Th>Email</Th>
-            <Th>City</Th>
-            <Th>Street</Th>
-            <Th>Company Name</Th>
-            <Th>Phone</Th>
-            <Th>Website</Th>
+            <Th fontWeight="800">ID</Th>
+            <Th fontWeight="800">Name</Th>
+            <Th fontWeight="800">Email</Th>
+            <Th fontWeight="800">City</Th>
+            <Th fontWeight="800">Street</Th>
+            <Th fontWeight="800">Company Name</Th>
+            <Th fontWeight="800">Phone</Th>
+            <Th fontWeight="800">Website</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -65,6 +66,7 @@ const SingleUserPage = () => {
           _hover={{ bg: "#00417A" }}
           marginTop="20px"
           marginRight="10px"
+          marginBottom="20px"
           onClick={() => history.push(`/users/${id}/edit`)}
         >
           Edit User
@@ -74,6 +76,7 @@ const SingleUserPage = () => {
           color="white"
           _hover={{ bg: "#00417A" }}
           marginTop="20px"
+          marginBottom="20px"
           onClick={() => deleteUser(id)}
         >
           Delete User
@@ -83,4 +86,4 @@ const SingleUserPage = () => {
   )
 }
 
-export { SingleUserPage }
+export default authentication(SingleUserPage);

@@ -7,6 +7,7 @@ import { Container, Center } from "@chakra-ui/layout";
 import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
+import { authentication } from "../../hoc/authentication";
 
 const UsersPage = () => {
 
@@ -30,13 +31,14 @@ const UsersPage = () => {
         <Container maxW="container.lg">
             <Table
                 variant="simple"
-                marginTop="20px">
+                marginTop="20px"
+            >
                 <Thead>
                     <Tr>
-                        <Th>ID</Th>
-                        <Th>Name</Th>
-                        <Th>Email</Th>
-                        <Th>City</Th>
+                        <Th fontWeight="800">ID</Th>
+                        <Th fontWeight="800">Name</Th>
+                        <Th fontWeight="800">Email</Th>
+                        <Th fontWeight="800">City</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -50,7 +52,8 @@ const UsersPage = () => {
                     bg="#00417A"
                     color="white"
                     _hover={{ bg: "#00417A" }}
-                    marginTop="15px"
+                    marginTop="20px"
+                    marginBottom="20px"
                     onClick={() => history.push('/createuser')}
                 >Create new user
                 </Button>
@@ -59,4 +62,4 @@ const UsersPage = () => {
     )
 }
 
-export { UsersPage }
+export default authentication(UsersPage);
