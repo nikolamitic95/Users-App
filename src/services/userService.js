@@ -9,32 +9,32 @@ class UserService {
                 let newUsers = users.map(user => new UserObj(user))
                 return newUsers;
             })
-            .catch(error => console.log(error))
+            .catch(() => alert("Something went wrong"))
     }
 
     getSingleUser(id) {
         return baseAPI.get(`users/${id}`)
             .then(response => response.data)
             .then(singleUser => new UserObj(singleUser))
-            .catch(error => console.log(error))
+            .catch(() =>  alert("Something went wrong"))
     }
 
     deleteUser(id, user) {
         return baseAPI.delete(`users/${id}`, user)
             .then(response => response.status)
-            .catch(error => console.log(error))
+            .catch(() =>  alert("Something went wrong"))
     }
 
     postUser(user) {
         return baseAPI.post(`users`, user)
             .then(response => response.status)
-            .catch(error => console.log(error))
+            .catch(() => alert("Something went wrong"))
     }
-    Ф
+    
     editUser(user, id) {
         return baseAPI.patch(`users/${id}`, user)
             .then(response => response.status)
-            .catch(error => console.log(error))
+            .catch(() =>  alert("Something went wrong"))
     }
 }
 

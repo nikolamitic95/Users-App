@@ -4,7 +4,7 @@ import { userService } from '../../services/userService';
 import { useHistory } from "react-router";
 import { validateEmail } from '../../shared/utilities';
 import { FormEl } from "../../components/Form/FormEl";
-import { authentication } from "../../hoc/authentication";
+import { authentication } from "../../authentication/authentication";
 
 const CreateNewUser = () => {
     const [user, setUser] = useState({});

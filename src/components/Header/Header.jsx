@@ -11,7 +11,12 @@ const Header = () => {
 
   return (
     <Menu>
-      <Box bg="#00417A" p="20px" d="flex" justifyContent="space-around">
+      <Box
+        bg="#00417A"
+        p="20px"
+        d="flex"
+        justifyContent="space-around"
+      >
         <Text color="white" fontSize="3xl" fontWeight="700"> USERS APP </Text>
         {colorMode === "light" &&
           <MoonIcon

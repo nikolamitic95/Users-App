@@ -7,7 +7,7 @@ import { Container, Center } from "@chakra-ui/layout";
 import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
-import { authentication } from "../../hoc/authentication";
+import { authentication } from "../../authentication/authentication";
 
 const UsersPage = () => {
 
@@ -34,7 +34,7 @@ const UsersPage = () => {
                 marginTop="20px"
             >
                 <Thead>
-                    <Tr>
+                    <Tr gridColumn="12">
                         <Th fontWeight="800">ID</Th>
                         <Th fontWeight="800">Name</Th>
                         <Th fontWeight="800">Email</Th>

@@ -7,7 +7,7 @@ import { useHistory, useParams } from "react-router";
 import { User } from "../../components/User/User";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
-import { authentication } from "../../hoc/authentication";
+import { authentication } from "../../authentication/authentication";
 
 const SingleUserPage = () => {
 

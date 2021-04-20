@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import { useHistory } from "react-router";
-import { Loader } from "../components/Spinner/Spinner";
 
 const authentication = (Component) => {
     return (props) => {
@@ -17,7 +16,7 @@ const authentication = (Component) => {
             }
         }, [history]);
 
-        return <>{auth ? <Component {...props} /> : <Loader />}</>;
+        return <>{auth ? <Component {...props} /> : null}</>;
     };
 };
 
