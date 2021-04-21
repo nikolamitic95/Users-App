@@ -2,7 +2,7 @@
 
 Simple CRUD Application where you log in by email and have users listed. By clicking on the user we get all the details about him, we can delete and update the user. We also have the option to create a new user. In the header  be a button to change between light and dark mode of the theme. 
 
-DEMO:  
+DEMO: [Users App](https://nikolamitic95.github.io/Users-App/#/) 
 
 ## Stack
 
