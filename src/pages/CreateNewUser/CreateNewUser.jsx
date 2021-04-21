@@ -4,13 +4,12 @@ import { userService } from '../../services/userService';
 import { useHistory } from "react-router";
 import { validateEmail } from '../../shared/utilities';
 import { FormEl } from "../../components/Form/FormEl";
-import { authentication } from "../../authentication/authentication";
+import { authentication } from "../../hoc/authentication";
 
 const CreateNewUser = () => {
     const [user, setUser] = useState({});
     const history = useHistory();
     const [message, setMessage] = useState("");
-
 
     const setValues = (data, name) => {
         setUser({ ...user, [name]: data });

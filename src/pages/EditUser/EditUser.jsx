@@ -4,7 +4,7 @@ import { userService } from '../../services/userService';
 import { useHistory, useParams } from "react-router";
 import { validateEmail } from "../../shared/utilities";
 import { FormEl } from "../../components/Form/FormEl";
-import { authentication } from "../../authentication/authentication";
+import { authentication } from "../../hoc/authentication";
 
 const EditUser = () => {
 

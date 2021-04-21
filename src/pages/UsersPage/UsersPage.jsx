@@ -7,7 +7,7 @@ import { Container, Center } from "@chakra-ui/layout";
 import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
-import { authentication } from "../../authentication/authentication";
+import { authentication } from "../../hoc/authentication";
 
 const UsersPage = () => {
 
