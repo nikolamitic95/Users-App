@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@chakra-ui/button";
 import { Container, Center } from "@chakra-ui/layout";
 import { Table, Tbody, Th, Thead, Tr } from "@chakra-ui/table";
+import { Text } from "@chakra-ui/react";
 import { useHistory, useParams } from "react-router";
 import { User } from "../../components/User/User";
 import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
 import { authentication } from "../../hoc/authentication";
+import { Card } from '../../components/Card/Card';
 
 const SingleUserPage = () => {
 
@@ -15,10 +17,16 @@ const SingleUserPage = () => {
   const history = useHistory();
   let { id } = useParams();
   const [loader, setLoader] = useState(true);
+  const [posts, setPosts] = useState();
+  const [albums, setAlbums] = useState();
 
   const getUser = async (id) => {
     const fetchSingleUser = await userService.getSingleUser(id);
+    const fetchPosts = await userService.getPosts(id);
+    const fetchAlbums = await userService.getAlbums(id);
     setUser(fetchSingleUser);
+    setPosts(fetchPosts);
+    setAlbums(fetchAlbums);
     setLoader(false);
   };
 
@@ -82,6 +90,22 @@ const SingleUserPage = () => {
           Delete User
         </Button>
       </Center>
+      <Center>
+        <Text fontSize="3xl" fontWeight="700" marginBottom="20px">
+          USER POSTS
+      </Text>
+      </Center>
+      {posts.map((post) => (
+        <Card title={post.title} body={post.body} details />
+      ))}
+      <Center>
+        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" marginTop="20px">
+          USER ALBUMS
+      </Text>
+      </Center>
+      {albums.map((album) => (
+        <Card title={album.title} />
+      ))}
     </Container>
   )
 }

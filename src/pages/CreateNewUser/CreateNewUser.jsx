@@ -17,11 +17,14 @@ const CreateNewUser = () => {
     };
 
     const createUser = async () => {
-        const status = await userService.postUser(user);
         const validEmail = validateEmail(user.email)
         if (!validEmail || !user.name) {
             setMessage("Please enter a valid name and email!")
-        } else if (status === 201) {
+            return;
+        }
+
+        const status = await userService.postUser(user);
+        if (status === 201) {
             alert("The user has been successfully created!")
             history.push('/users')
         }

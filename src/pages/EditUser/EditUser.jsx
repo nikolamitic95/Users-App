@@ -24,11 +24,14 @@ const EditUser = () => {
     };
 
     const editUser = async () => {
-        const status = await userService.editUser(user, id);
         const validEmail = validateEmail(user.email)
         if (!validEmail || !user.name) {
             setMessage("Please enter a valid name and email!")
-        } else if (status === 200) {
+            return;
+        }
+
+        const status = await userService.editUser(user, id);
+        if (status === 200) {
             alert("The user has been successfully updated!")
             history.push('/users')
         }

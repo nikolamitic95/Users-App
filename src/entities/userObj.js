@@ -1,6 +1,6 @@
-  
-export class UserObj{
-    constructor(showUser){
+
+export class UserObj {
+    constructor(showUser) {
         this.id = showUser.id;
         this.name = showUser.name;
         this.email = showUser.email;
