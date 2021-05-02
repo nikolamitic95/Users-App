@@ -46,7 +46,7 @@ class UserService {
                 let newPosts = posts.map(post => new PostObj(post))
                 return newPosts;
             })
-            .catch(() => alert("Something"))
+            .catch(() => alert("Something went wrong"))
     }
     
     getAlbums(id) {
@@ -56,7 +56,7 @@ class UserService {
                 let newAlbums = albums.map(album => new AlbumObj(album))
                 return newAlbums;
             })
-            .catch(() => alert("Something"))
+            .catch(() => alert("Something went wrong"))
     }
 }
 

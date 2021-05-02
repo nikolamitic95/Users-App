@@ -10,6 +10,12 @@ import { userService } from "../../services/userService";
 import { Loader } from "../../components/Spinner/Spinner";
 import { authentication } from "../../hoc/authentication";
 import { Card } from '../../components/Card/Card';
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react"
 
 const SingleUserPage = () => {
 
@@ -91,15 +97,15 @@ const SingleUserPage = () => {
         </Button>
       </Center>
       <Center>
-        <Text fontSize="3xl" fontWeight="700" marginBottom="20px">
+        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" borderBottom="2px">
           USER POSTS
       </Text>
       </Center>
       {posts.map((post) => (
-        <Card title={post.title} body={post.body} details />
+        <Card title={post.title} body={post.body} />
       ))}
       <Center>
-        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" marginTop="20px">
+        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" marginTop="20px" borderBottom="2px">
           USER ALBUMS
       </Text>
       </Center>
