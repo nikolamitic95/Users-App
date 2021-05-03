@@ -21,4 +21,36 @@ export const loginValidation = (email) => {
   }
 };
 
+export const formFields = (name, email, city, street, companyName, phone, website) => {
+  if (name && email && city && street && companyName && phone && website) {
+    return true
+  } else {
+    return false
+  }
+}
 
+export const validUrl = (website) => {
+  let valid = new RegExp('^(https?:\\/\\/)?' + '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+    '((\\d{1,3}\\.){3}\\d{1,3}))' + '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + '(\\?[;&a-z\\d%_.~+=-]*)?' +
+    '(\\#[-a-z\\d_]*)?$', 'i');
+  return !!valid.test(website);
+}
+
+export const phoneValidaton = (phone) => {
+  let valid = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
+  let numeber = phone ? phone.length : null;
+  if (!valid.test(phone) || numeber < 10) {
+    return false
+  } else {
+    return true
+  }
+}
+
+// export const format = (name, city, street, companyName) => {
+//   if (typeof name === 'string' && typeof city === 'string' && typeof street === 'string'
+//     && typeof companyName === 'string') {
+//     return true
+//   } else {
+//     return false
+//   }
+// }

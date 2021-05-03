@@ -97,7 +97,7 @@ const SingleUserPage = () => {
         </Button>
       </Center>
       <Center>
-        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" borderBottom="2px">
+        <Text color="#00417A" fontSize="3xl" fontWeight="700" marginBottom="20px" borderBottom="2px" marginTop="20px">
           USER POSTS
       </Text>
       </Center>
@@ -105,7 +105,7 @@ const SingleUserPage = () => {
         <Card title={post.title} body={post.body} />
       ))}
       <Center>
-        <Text fontSize="3xl" fontWeight="700" marginBottom="20px" marginTop="20px" borderBottom="2px">
+        <Text color="#00417A" fontSize="3xl" fontWeight="700" marginBottom="20px" marginTop="20px" borderBottom="2px">
           USER ALBUMS
       </Text>
       </Center>

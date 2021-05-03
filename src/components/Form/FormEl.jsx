@@ -3,13 +3,15 @@ import React from "react";
 import { InputEl } from "../Input/Input";
 import { Container, Center, Text, Button } from '@chakra-ui/react';
 
-const FormEl = ({ title, message, name, email, setValues, submit, buttonTitle }) => {
+const FormEl = ({ title, message, name, email, city, street, companyName, phone, website, setValues,
+    submit, buttonTitle }) => {
     return (
         <Container
             p="25px"
             borderColor="#00417A"
             borderWidth="2px"
             marginTop="50px"
+            marginBootom="50px"
             borderRadius="15px"
         >
             <Center>
@@ -30,6 +32,41 @@ const FormEl = ({ title, message, name, email, setValues, submit, buttonTitle })
                 name="email"
                 placeholder="Enter email"
                 value={email}
+                onChange={setValues}
+            />
+            <InputEl
+                type="text"
+                name="city"
+                placeholder="Enter city"
+                value={city}
+                onChange={setValues}
+            />
+            <InputEl
+                type="text"
+                name="street"
+                placeholder="Enter street"
+                value={street}
+                onChange={setValues}
+            />
+            <InputEl
+                type="text"
+                name="companyName"
+                placeholder="Enter companyName"
+                value={companyName}
+                onChange={setValues}
+            />
+            <InputEl
+                type="text"
+                name="phone"
+                placeholder="Enter phone"
+                value={phone}
+                onChange={setValues}
+            />
+            <InputEl
+                type="text"
+                name="website"
+                placeholder="Enter website"
+                value={website}
                 onChange={setValues}
             />
             <Center>
