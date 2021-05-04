@@ -45,12 +45,3 @@ export const phoneValidaton = (phone) => {
     return true
   }
 }
-
-// export const format = (name, city, street, companyName) => {
-//   if (typeof name === 'string' && typeof city === 'string' && typeof street === 'string'
-//     && typeof companyName === 'string') {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
