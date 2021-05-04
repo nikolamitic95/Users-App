@@ -21,17 +21,12 @@ const CreateNewUser = () => {
         const allFields = formFields(user.name, user.email, user.city, user.street, user.companyName, user.phone,
             user.website)
         const url = validUrl(user.website)
-        // const formatFields = format(user.name, user.city, user.street, user.companyName)
         const validPhone = phoneValidaton(user.phone)
 
         if (!allFields) {
             setMessage("All fields are mandatory!")
             return;
         }
-        // if (!formatFields) {
-        //     setMessage("Invalid field name, city, street or company!")
-        //     return;
-        // }
         if (!validEmail) {
             setMessage("Email is not valid!")
             return;
@@ -41,12 +36,10 @@ const CreateNewUser = () => {
             return;
         }
         if (!validPhone) {
-            setMessage("Invalid phone format! example: 1-770-736-8031 x56442")
+            setMessage("Phone is not valid! example: 1-770-736-8031 x56442")
             return;
         }
-
         const status = await userService.postUser(user);
-
         if (status === 201) {
             alert("The user has been successfully updated!")
             history.push('/users')
