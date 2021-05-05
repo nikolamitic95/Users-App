@@ -21,8 +21,8 @@ export const loginValidation = (email) => {
   }
 };
 
-export const formFields = (name, email, city, street, companyName, phone, website) => {
-  if (name && email && city && street && companyName && phone && website) {
+export const formFields = (user) => {
+  if (user.name && user.email && user.city && user.street && user.companyName && user.phone && user.website) {
     return true
   } else {
     return false

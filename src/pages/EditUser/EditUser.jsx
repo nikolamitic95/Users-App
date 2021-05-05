@@ -26,8 +26,7 @@ const EditUser = () => {
     const editUser = async () => {
 
         const validEmail = validateEmail(user.email)
-        const allFields = formFields(user.name, user.email, user.city, user.street, user.companyName, user.phone,
-            user.website)
+        const allFields = formFields(user)
         const url = validUrl(user.website)
         const validPhone = phoneValidaton(user.phone)
 
